@@ -345,7 +345,7 @@ class MyHomePage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.black26
                 ),
-                child: Text("Tez-tez qidirilganlar", textAlign: TextAlign.center, style: TextStyle(fontSize: 25),),
+                child: Text("Tez-tez ko'rilganlar", textAlign: TextAlign.center, style: TextStyle(fontSize: 25, color: Colors.blue),),
               ),
               Container(
                 height: MediaQuery.of(context).size.height *
@@ -366,7 +366,7 @@ class MyHomePage extends StatelessWidget {
                                 padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
                                 height: MediaQuery.of(context).size.height *
                                     containerHeightFraction *
-                                    1.5,
+                                    1.4,
                                 width: MediaQuery.of(context).size.width *
                                     containerWidthFraction,
                                 decoration: BoxDecoration(
@@ -380,7 +380,7 @@ class MyHomePage extends StatelessWidget {
                                 ),
                                 child: TextButton(
                                   onPressed: () {},
-                                  child: Text('SUMMARY1'),
+                                  child: Text(''),
                                 ),
                               ),
                             ),
@@ -390,7 +390,7 @@ class MyHomePage extends StatelessWidget {
                               decoration: BoxDecoration(color: Colors.black26),
                               child: Text(
                                 "Osh",
-                                style: TextStyle(),
+                                style: TextStyle(fontSize: 20),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -407,7 +407,7 @@ class MyHomePage extends StatelessWidget {
                                 padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
                                 height: MediaQuery.of(context).size.height *
                                     containerHeightFraction *
-                                    1.5,
+                                    1.4,
                                 width: MediaQuery.of(context).size.width *
                                     containerWidthFraction,
                                 decoration: BoxDecoration(
@@ -421,7 +421,7 @@ class MyHomePage extends StatelessWidget {
                                 ),
                                 child: TextButton(
                                   onPressed: () {},
-                                  child: Text('SUMMARY1'),
+                                  child: Text(''),
                                 ),
                               ),
                             ),
@@ -430,8 +430,8 @@ class MyHomePage extends StatelessWidget {
                                   containerWidthFraction,
                               decoration: BoxDecoration(color: Colors.black26),
                               child: Text(
-                                "Osh",
-                                style: TextStyle(),
+                                "To'rt",
+                                style: TextStyle(fontSize: 20),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -476,8 +476,8 @@ class MyHomePage extends StatelessWidget {
                                   containerWidthFraction,
                               decoration: BoxDecoration(color: Colors.black26),
                               child: Text(
-                                "Osh",
-                                style: TextStyle(),
+                                "Shashlik",
+                                style: TextStyle(fontSize: 20),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -517,8 +517,8 @@ class MyHomePage extends StatelessWidget {
                                   containerWidthFraction,
                               decoration: BoxDecoration(color: Colors.black26),
                               child: Text(
-                                "Osh",
-                                style: TextStyle(),
+                                "Sho'rva",
+                                style: TextStyle(fontSize: 20),
                                 textAlign: TextAlign.center,
                               ),
                             ),
