@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'image_banner.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:english_words/english_words.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,10 +35,13 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Salomlar'),
         centerTitle: true,
-        actions: const [
-          Center(
-            child: Text("authProvider.username"),
-          )
+        actions: [
+          IconButton(onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => SearchPage()),
+            );}, icon: Icon(Icons.search))
         ],
       ),
       drawer: SizedBox(
@@ -137,7 +141,13 @@ class MyHomePage extends StatelessWidget {
                                   backgroundColor: Colors
                                       .transparent, // Set the background color of the button
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Youtube(videoId: '3Xww-6igSp4', Name: 'Shirinlik',)),
+                                  );
+                                  },
                                 child: Column(
                                   children: [
                                     Padding(padding: EdgeInsets.only(top: 3.0)),
@@ -381,7 +391,12 @@ class MyHomePage extends StatelessWidget {
                                         fit: BoxFit.fill),
                                   ),
                                   child: TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Youtube(videoId: '3Xww-6igSp4', Name: 'Osh',)),
+                                      );},
                                     child: Text(''),
                                   ),
                                 ),
@@ -422,7 +437,12 @@ class MyHomePage extends StatelessWidget {
                                         fit: BoxFit.fill),
                                   ),
                                   child: TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Youtube(videoId: 'S9PBhfjRogw', Name: 'Tort',)),
+                                      );},
                                     child: Text(''),
                                   ),
                                 ),
@@ -432,7 +452,7 @@ class MyHomePage extends StatelessWidget {
                                     containerWidthFraction,
                                 decoration: BoxDecoration(color: Colors.black26),
                                 child: Text(
-                                  "To'rt",
+                                  "Tort",
                                   style: TextStyle(fontSize: 20),
                                   textAlign: TextAlign.center,
                                 ),
@@ -710,6 +730,122 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Youtube extends StatefulWidget {
+  final String Name;
+  final String videoId;
+
+  Youtube({required this.videoId, required this.Name});
+
+  @override
+  _YoutubeState createState() => _YoutubeState();
+}
+
+class _YoutubeState extends State<Youtube> {
+  late YoutubePlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = YoutubePlayerController(
+      initialVideoId: widget.videoId,
+      flags: YoutubePlayerFlags(
+        autoPlay: true,
+        mute: false,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(widget.Name),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              // Navigate back or perform any action on back button press
+              Navigator.of(context).pop();
+            },
+          ),
+        ),
+        body: Center(
+          child: YoutubePlayer(
+            controller: _controller,
+            showVideoProgressIndicator: true,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SearchPage extends StatefulWidget {
+  @override
+  _SearchPageState createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  String? _result;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Search')),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            Text(_result ?? '', style: TextStyle(fontSize: 18)),
+            ElevatedButton(
+              onPressed: () async {
+                var result = await showSearch<String>(
+                  context: context,
+                  delegate: CustomDelegate(),
+                );
+                setState(() => _result = result);
+              },
+              child: Text('Search'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomDelegate extends SearchDelegate<String> {
+  List<String> data = nouns.take(100).toList();
+
+  @override
+  List<Widget> buildActions(BuildContext context) => [IconButton(icon: Icon(Icons.clear), onPressed: () => query = '')];
+
+  @override
+  Widget buildLeading(BuildContext context) => IconButton(icon: Icon(Icons.chevron_left), onPressed: () => close(context, ''));
+
+  @override
+  Widget buildResults(BuildContext context) => Container();
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    var listToShow;
+    if (query.isNotEmpty)
+      listToShow = data.where((e) => e.contains(query) && e.startsWith(query)).toList();
+    else
+      listToShow = data;
+
+    return ListView.builder(
+      itemCount: listToShow.length,
+      itemBuilder: (_, i) {
+        var noun = listToShow[i];
+        return ListTile(
+          title: Text(noun),
+          onTap: () => close(context, noun),
+        );
+      },
     );
   }
 }
