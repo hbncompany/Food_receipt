@@ -416,7 +416,7 @@ class MyHomePage extends StatelessWidget {
                                   borderRadius:
                                   BorderRadius.all(Radius.circular(5)),
                                   image: DecorationImage(
-                                      image: AssetImage('assets/images/plov.jpg'),
+                                      image: AssetImage('assets/images/pie.jpg'),
                                       fit: BoxFit.fill),
                                 ),
                                 child: TextButton(
