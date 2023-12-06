@@ -33,15 +33,20 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Salomlar'),
+        title: const Text(
+          'T a o m l a r',
+          style: TextStyle(fontSize: 25, color: Colors.white),
+        ),
         centerTitle: true,
         actions: [
-          IconButton(onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => SearchPage()),
-            );}, icon: Icon(Icons.search))
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },
+              icon: Icon(Icons.search))
         ],
       ),
       drawer: SizedBox(
@@ -99,635 +104,703 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: ListView(
-          children: [
-            Container(
-              child: Container(
-                child: ImageBanner("assets/images/Home.png"),
+        child: Container(
+          child: ListView(
+            children: [
+              Container(
+                child: Container(
+                  child: ImageBanner("assets/images/Home.png"),
+                ),
               ),
-            ),
-            Padding(padding: EdgeInsets.only(top: 5.0)),
-            Column(
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width *
-                      containerWidthFraction *
-                      2,
-                  alignment: Alignment.centerLeft,
-                  child: Text("Guruhlar", textAlign: TextAlign.left, style: TextStyle(fontSize: 15),),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height *
-                      containerHeightFraction *
-                      0.7,
-                  color: Colors.black12,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width *
-                            containerWidthFraction *
-                            0.6,
-                        // color: Colors.black12,
-                        child: Column(
-                          children: [
-                            Container(
-                              height: MediaQuery.of(context).size.height *
-                                  containerHeightFraction *
-                                  0.7,
-                              // color: Colors.black12,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors
-                                      .transparent, // Set the background color of the button
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Youtube(videoId: '3Xww-6igSp4', Name: 'Shirinlik',)),
-                                  );
+              Padding(padding: EdgeInsets.only(top: 5.0)),
+              Column(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        containerWidthFraction *
+                        2,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Guruhlar",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height *
+                        containerHeightFraction *
+                        0.7,
+                    color: Colors.teal,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width *
+                              containerWidthFraction *
+                              0.6,
+                          // color: Colors.black12,
+                          child: Column(
+                            children: [
+                              Container(
+                                height: MediaQuery.of(context).size.height *
+                                    containerHeightFraction *
+                                    0.7,
+                                width: MediaQuery.of(context).size.width *
+                                    containerWidthFraction *
+                                    0.6,
+                                // color: Colors.black12,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors
+                                        .transparent, // Set the background color of the button
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Delicous(),
+                                      ),
+                                    );
                                   },
-                                child: Column(
-                                  children: [
-                                    Padding(padding: EdgeInsets.only(top: 3.0)),
-                                    Container(
-                                      height: MediaQuery.of(context).size.height *
-                                          containerHeightFraction *
-                                          0.5,
-                                      decoration: BoxDecoration(
-                                          // borderRadius: BorderRadius.circular(300),
-                                          // color: Colors.cyanAccent
-                                          ),
-                                      child: Image.asset('assets/images/delec.png'),
-                                    ),
-                                    Container(
-                                      // color: Colors.black12,
-                                      child: Text("Shirinliklar"),
-                                    ),
-                                  ],
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 3.0)),
+                                      Container(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                containerHeightFraction *
+                                                0.5,
+                                        decoration: BoxDecoration(
+                                            // borderRadius: BorderRadius.circular(300),
+                                            // color: Colors.cyanAccent
+                                            ),
+                                        child: Image.asset(
+                                            'assets/images/delec.png'),
+                                      ),
+                                      Container(
+                                        // color: Colors.black12,
+                                        child: Text("Shirinliklar"),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width *
-                            containerWidthFraction *
-                            0.6,
-                        // color: Colors.black12,
-                        child: Column(
-                          children: [
-                            Container(
-                              height: MediaQuery.of(context).size.height *
-                                  containerHeightFraction *
-                                  0.7,
-                              // color: Colors.black12,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors
-                                      .transparent, // Set the background color of the button
-                                ),
-                                onPressed: () {},
-                                child: Column(
-                                  children: [
-                                    Padding(padding: EdgeInsets.only(top: 3.0)),
-                                    Container(
-                                      height: MediaQuery.of(context).size.height *
-                                          containerHeightFraction *
-                                          0.5,
-                                      decoration: BoxDecoration(
-                                          // borderRadius: BorderRadius.circular(300),
-                                          // color: Colors.cyanAccent
-                                          ),
-                                      child: Image.asset('assets/images/plov.png'),
-                                    ),
-                                    Container(
-                                      // color: Colors.black12,
-                                      child: Text("Quyuq taom"),
-                                    ),
-                                  ],
+                        Padding(padding: EdgeInsets.only(left: 0.0)),
+                        Container(
+                          width: MediaQuery.of(context).size.width *
+                              containerWidthFraction *
+                              0.6,
+                          // color: Colors.black12,
+                          child: Column(
+                            children: [
+                              Container(
+                                height: MediaQuery.of(context).size.height *
+                                    containerHeightFraction *
+                                    0.7,
+                                width: MediaQuery.of(context).size.width *
+                                    containerWidthFraction *
+                                    0.6,
+                                // color: Colors.black12,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors
+                                        .transparent, // Set the background color of the button
+                                  ),
+                                  onPressed: () {},
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 3.0)),
+                                      Container(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                containerHeightFraction *
+                                                0.5,
+                                        decoration: BoxDecoration(
+                                            // borderRadius: BorderRadius.circular(300),
+                                            // color: Colors.cyanAccent
+                                            ),
+                                        child: Image.asset(
+                                            'assets/images/plov.png'),
+                                      ),
+                                      Container(
+                                        // color: Colors.black12,
+                                        child: Text("Quyuq"),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width *
-                            containerWidthFraction *
-                            0.6,
-                        // color: Colors.black12,
-                        child: Column(
-                          children: [
-                            Container(
-                              height: MediaQuery.of(context).size.height *
-                                  containerHeightFraction *
-                                  0.7,
-                              // color: Colors.black12,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors
-                                      .transparent, // Set the background color of the button
-                                ),
-                                onPressed: () {},
-                                child: Column(
-                                  children: [
-                                    Padding(padding: EdgeInsets.only(top: 3.0)),
-                                    Container(
-                                      height: MediaQuery.of(context).size.height *
-                                          containerHeightFraction *
-                                          0.5,
-                                      decoration: BoxDecoration(
-                                          // borderRadius: BorderRadius.circular(300),
-                                          // color: Colors.cyanAccent
-                                          ),
-                                      child: Image.asset('assets/images/suyuq.png'),
-                                    ),
-                                    Container(
-                                      // color: Colors.black12,
-                                      child: Text("Suyuq taom"),
-                                    ),
-                                  ],
+                        Padding(padding: EdgeInsets.only(right: 0.0)),
+                        Container(
+                          width: MediaQuery.of(context).size.width *
+                              containerWidthFraction *
+                              0.6,
+                          // color: Colors.black12,
+                          child: Column(
+                            children: [
+                              Container(
+                                height: MediaQuery.of(context).size.height *
+                                    containerHeightFraction *
+                                    0.7,
+                                width: MediaQuery.of(context).size.width *
+                                    containerWidthFraction *
+                                    0.6,
+                                // color: Colors.black12,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors
+                                        .transparent, // Set the background color of the button
+                                  ),
+                                  onPressed: () {},
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 3.0)),
+                                      Container(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                containerHeightFraction *
+                                                0.5,
+                                        decoration: BoxDecoration(
+                                            // borderRadius: BorderRadius.circular(300),
+                                            // color: Colors.cyanAccent
+                                            ),
+                                        child: Image.asset(
+                                            'assets/images/suyuq.png'),
+                                      ),
+                                      Container(
+                                        // color: Colors.black12,
+                                        child: Text("Suyuq"),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width *
-                            containerWidthFraction *
-                            0.6,
-                        // color: Colors.black12,
-                        child: Column(
-                          children: [
-                            Container(
-                              height: MediaQuery.of(context).size.height *
-                                  containerHeightFraction *
-                                  0.7,
-                              // color: Colors.black12,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors
-                                      .transparent, // Set the background color of the button
-                                ),
-                                onPressed: () {},
-                                child: Column(
-                                  children: [
-                                    Padding(padding: EdgeInsets.only(top: 3.0)),
-                                    Container(
-                                      height: MediaQuery.of(context).size.height *
-                                          containerHeightFraction *
-                                          0.5,
-                                      decoration: BoxDecoration(
-                                          // borderRadius: BorderRadius.circular(300),
-                                          // color: Colors.cyanAccent
-                                          ),
-                                      child: Image.asset('assets/images/fast.png'),
-                                    ),
-                                    Container(
-                                      // color: Colors.black12,
-                                      child: Text("Fast food"),
-                                    ),
-                                  ],
+                        Padding(padding: EdgeInsets.only(right: 0.0)),
+                        Container(
+                          width: MediaQuery.of(context).size.width *
+                              containerWidthFraction *
+                              0.6,
+                          // color: Colors.black12,
+                          child: Column(
+                            children: [
+                              Container(
+                                height: MediaQuery.of(context).size.height *
+                                    containerHeightFraction *
+                                    0.7,
+                                width: MediaQuery.of(context).size.width *
+                                    containerWidthFraction *
+                                    0.6,
+                                // color: Colors.black12,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors
+                                        .transparent, // Set the background color of the button
+                                  ),
+                                  onPressed: () {},
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 3.0)),
+                                      Container(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                containerHeightFraction *
+                                                0.5,
+                                        decoration: BoxDecoration(
+                                            // borderRadius: BorderRadius.circular(300),
+                                            // color: Colors.cyanAccent
+                                            ),
+                                        child: Image.asset(
+                                            'assets/images/fast.png'),
+                                      ),
+                                      Container(
+                                        // color: Colors.black12,
+                                        child: Text("Fast food"),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width *
-                            containerWidthFraction *
-                            0.6,
-                        // color: Colors.black12,
-                        child: Column(
-                          children: [
-                            Container(
-                              height: MediaQuery.of(context).size.height *
-                                  containerHeightFraction *
-                                  0.7,
-                              // color: Colors.black12,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors
-                                      .transparent, // Set the background color of the button
-                                ),
-                                onPressed: () {},
-                                child: Column(
-                                  children: [
-                                    Padding(padding: EdgeInsets.only(top: 3.0)),
-                                    Container(
-                                      height: MediaQuery.of(context).size.height *
-                                          containerHeightFraction *
-                                          0.5,
-                                      decoration: BoxDecoration(
-                                          // borderRadius: BorderRadius.circular(300),
-                                          // color: Colors.cyanAccent
-                                          ),
-                                      child: Image.asset('assets/images/other.png'),
-                                    ),
-                                    Container(
-                                      // color: Colors.black12,
-                                      child: Text("Boshqalar"),
-                                    ),
-                                  ],
+                        Padding(padding: EdgeInsets.only(right: 0.0)),
+                        Container(
+                          width: MediaQuery.of(context).size.width *
+                              containerWidthFraction *
+                              0.6,
+                          // color: Colors.black12,
+                          child: Column(
+                            children: [
+                              Container(
+                                height: MediaQuery.of(context).size.height *
+                                    containerHeightFraction *
+                                    0.7,
+                                width: MediaQuery.of(context).size.width *
+                                    containerWidthFraction *
+                                    0.6,
+                                // color: Colors.black12,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors
+                                        .transparent, // Set the background color of the button
+                                  ),
+                                  onPressed: () {},
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 3.0)),
+                                      Container(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                containerHeightFraction *
+                                                0.5,
+                                        decoration: BoxDecoration(
+                                            // borderRadius: BorderRadius.circular(300),
+                                            // color: Colors.cyanAccent
+                                            ),
+                                        child: Image.asset(
+                                            'assets/images/other.png'),
+                                      ),
+                                      Container(
+                                        // color: Colors.black12,
+                                        child: Text("Boshqalar"),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Padding(padding: EdgeInsets.only(top: 5.0)),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height *
-                      containerHeightFraction *
-                      0.3,
-                  width: MediaQuery.of(context).size.width *0.91,
-                  decoration: BoxDecoration(
-                    color: Colors.black26
+                ],
+              ),
+              Padding(padding: EdgeInsets.only(top: 10.0)),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height *
+                        containerHeightFraction *
+                        0.3,
+                    width: MediaQuery.of(context).size.width * 0.91,
+                    decoration: BoxDecoration(color: Colors.black26),
+                    child: Text(
+                      "Tez-tez ko'rilganlar",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 25, color: Colors.blue),
+                    ),
                   ),
-                  child: Text("Tez-tez ko'rilganlar", textAlign: TextAlign.center, style: TextStyle(fontSize: 25, color: Colors.blue),),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height *
-                      containerHeightFraction *
-                      3,
-                  child: ListView(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height *
-                                    containerHeightFraction *
-                                    1,
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                  Padding(padding: EdgeInsets.only(top: 5.0)),
+                  Container(
+                    height: MediaQuery.of(context).size.height *
+                        containerHeightFraction *
+                        2.6,
+                    child: ListView(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              children: [
+                                Container(
                                   height: MediaQuery.of(context).size.height *
                                       containerHeightFraction *
-                                      1.4,
+                                      1,
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        containerHeightFraction *
+                                        1.4,
+                                    width: MediaQuery.of(context).size.width *
+                                        containerWidthFraction,
+                                    decoration: BoxDecoration(
+                                      color: Color(0x69027ee5),
+                                      // border: Border.all(color: Colors.blue, width: 1),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(5)),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/plov.jpg'),
+                                          fit: BoxFit.fill),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Youtube(
+                                                    videoId: '3Xww-6igSp4',
+                                                    Name: 'Osh',
+                                                  )),
+                                        );
+                                      },
+                                      child: Text(''),
+                                    ),
+                                  ),
+                                ),
+                                Container(
                                   width: MediaQuery.of(context).size.width *
                                       containerWidthFraction,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x69027ee5),
-                                    // border: Border.all(color: Colors.blue, width: 1),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5)),
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/images/plov.jpg'),
-                                        fit: BoxFit.fill),
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Youtube(videoId: '3Xww-6igSp4', Name: 'Osh',)),
-                                      );},
-                                    child: Text(''),
+                                  decoration:
+                                      BoxDecoration(color: Colors.black26),
+                                  child: Text(
+                                    "Osh",
+                                    style: TextStyle(fontSize: 20),
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width *
-                                    containerWidthFraction,
-                                decoration: BoxDecoration(color: Colors.black26),
-                                child: Text(
-                                  "Osh",
-                                  style: TextStyle(fontSize: 20),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(padding: EdgeInsets.only(right: 5.0)),
-                          Column(
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height *
-                                    containerHeightFraction *
-                                    1,
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                              ],
+                            ),
+                            Padding(padding: EdgeInsets.only(right: 5.0)),
+                            Column(
+                              children: [
+                                Container(
                                   height: MediaQuery.of(context).size.height *
                                       containerHeightFraction *
-                                      1.4,
+                                      1,
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        containerHeightFraction *
+                                        1.4,
+                                    width: MediaQuery.of(context).size.width *
+                                        containerWidthFraction,
+                                    decoration: BoxDecoration(
+                                      color: Color(0x69027ee5),
+                                      // border: Border.all(color: Colors.blue, width: 1),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(5)),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/pie.jpg'),
+                                          fit: BoxFit.fill),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Youtube(
+                                                    videoId: 'S9PBhfjRogw',
+                                                    Name: 'Tort',
+                                                  )),
+                                        );
+                                      },
+                                      child: Text(''),
+                                    ),
+                                  ),
+                                ),
+                                Container(
                                   width: MediaQuery.of(context).size.width *
                                       containerWidthFraction,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x69027ee5),
-                                    // border: Border.all(color: Colors.blue, width: 1),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/images/pie.jpg'),
-                                        fit: BoxFit.fill),
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Youtube(videoId: 'S9PBhfjRogw', Name: 'Tort',)),
-                                      );},
-                                    child: Text(''),
+                                  decoration:
+                                      BoxDecoration(color: Colors.black26),
+                                  child: Text(
+                                    "Tort",
+                                    style: TextStyle(fontSize: 20),
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width *
-                                    containerWidthFraction,
-                                decoration: BoxDecoration(color: Colors.black26),
-                                child: Text(
-                                  "Tort",
-                                  style: TextStyle(fontSize: 20),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 10.0)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height *
-                                    containerHeightFraction *
-                                    1,
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 10.0)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              children: [
+                                Container(
                                   height: MediaQuery.of(context).size.height *
                                       containerHeightFraction *
-                                      1.5,
+                                      1,
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        containerHeightFraction *
+                                        1.5,
+                                    width: MediaQuery.of(context).size.width *
+                                        containerWidthFraction,
+                                    decoration: BoxDecoration(
+                                      color: Color(0x69027ee5),
+                                      // border: Border.all(color: Colors.blue, width: 1),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(5)),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/shashlik.jpg'),
+                                          fit: BoxFit.fill),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {},
+                                      child: Text(''),
+                                    ),
+                                  ),
+                                ),
+                                Container(
                                   width: MediaQuery.of(context).size.width *
                                       containerWidthFraction,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x69027ee5),
-                                    // border: Border.all(color: Colors.blue, width: 1),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/images/shashlik.jpg'),
-                                        fit: BoxFit.fill),
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: Text(''),
+                                  decoration:
+                                      BoxDecoration(color: Colors.black26),
+                                  child: Text(
+                                    "Shashlik",
+                                    style: TextStyle(fontSize: 20),
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width *
-                                    containerWidthFraction,
-                                decoration: BoxDecoration(color: Colors.black26),
-                                child: Text(
-                                  "Shashlik",
-                                  style: TextStyle(fontSize: 20),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(padding: EdgeInsets.only(right: 5.0)),
-                          Column(
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height *
-                                    containerHeightFraction *
-                                    1,
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                              ],
+                            ),
+                            Padding(padding: EdgeInsets.only(right: 5.0)),
+                            Column(
+                              children: [
+                                Container(
                                   height: MediaQuery.of(context).size.height *
                                       containerHeightFraction *
-                                      1.5,
+                                      1,
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        containerHeightFraction *
+                                        1.5,
+                                    width: MediaQuery.of(context).size.width *
+                                        containerWidthFraction,
+                                    decoration: BoxDecoration(
+                                      color: Color(0x69027ee5),
+                                      // border: Border.all(color: Colors.blue, width: 1),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(5)),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/soup.jpg'),
+                                          fit: BoxFit.fill),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {},
+                                      child: Text(''),
+                                    ),
+                                  ),
+                                ),
+                                Container(
                                   width: MediaQuery.of(context).size.width *
                                       containerWidthFraction,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x69027ee5),
-                                    // border: Border.all(color: Colors.blue, width: 1),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/images/soup.jpg'),
-                                        fit: BoxFit.fill),
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: Text(''),
+                                  decoration:
+                                      BoxDecoration(color: Colors.black26),
+                                  child: Text(
+                                    "Sho'rva",
+                                    style: TextStyle(fontSize: 20),
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width *
-                                    containerWidthFraction,
-                                decoration: BoxDecoration(color: Colors.black26),
-                                child: Text(
-                                  "Sho'rva",
-                                  style: TextStyle(fontSize: 20),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 10.0)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height *
-                                    containerHeightFraction *
-                                    1,
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 10.0)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              children: [
+                                Container(
                                   height: MediaQuery.of(context).size.height *
                                       containerHeightFraction *
-                                      1.5,
+                                      1,
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        containerHeightFraction *
+                                        1.5,
+                                    width: MediaQuery.of(context).size.width *
+                                        containerWidthFraction,
+                                    decoration: BoxDecoration(
+                                      color: Color(0x69027ee5),
+                                      // border: Border.all(color: Colors.blue, width: 1),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(5)),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/assorti.jpg'),
+                                          fit: BoxFit.fill),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {},
+                                      child: Text(''),
+                                    ),
+                                  ),
+                                ),
+                                Container(
                                   width: MediaQuery.of(context).size.width *
                                       containerWidthFraction,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x69027ee5),
-                                    // border: Border.all(color: Colors.blue, width: 1),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/images/assorti.jpg'),
-                                        fit: BoxFit.fill),
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: Text(''),
+                                  decoration:
+                                      BoxDecoration(color: Colors.black26),
+                                  child: Text(
+                                    "Assorti",
+                                    style: TextStyle(fontSize: 20),
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width *
-                                    containerWidthFraction,
-                                decoration: BoxDecoration(color: Colors.black26),
-                                child: Text(
-                                  "Assorti",
-                                  style: TextStyle(),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(padding: EdgeInsets.only(right: 5.0)),
-                          Column(
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height *
-                                    containerHeightFraction *
-                                    1,
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                              ],
+                            ),
+                            Padding(padding: EdgeInsets.only(right: 5.0)),
+                            Column(
+                              children: [
+                                Container(
                                   height: MediaQuery.of(context).size.height *
                                       containerHeightFraction *
-                                      1.5,
+                                      1,
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        containerHeightFraction *
+                                        1.5,
+                                    width: MediaQuery.of(context).size.width *
+                                        containerWidthFraction,
+                                    decoration: BoxDecoration(
+                                      color: Color(0x69027ee5),
+                                      // border: Border.all(color: Colors.blue, width: 1),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(5)),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/norin.jpg'),
+                                          fit: BoxFit.fill),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {},
+                                      child: Text(''),
+                                    ),
+                                  ),
+                                ),
+                                Container(
                                   width: MediaQuery.of(context).size.width *
                                       containerWidthFraction,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x69027ee5),
-                                    // border: Border.all(color: Colors.blue, width: 1),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/images/norin.jpg'),
-                                        fit: BoxFit.fill),
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: Text(''),
+                                  decoration:
+                                      BoxDecoration(color: Colors.black26),
+                                  child: Text(
+                                    "Norin",
+                                    style: TextStyle(fontSize: 20),
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width *
-                                    containerWidthFraction,
-                                decoration: BoxDecoration(color: Colors.black26),
-                                child: Text(
-                                  "Norin",
-                                  style: TextStyle(),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 10.0)),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height *
-                                    containerHeightFraction *
-                                    1,
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 10.0)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              children: [
+                                Container(
                                   height: MediaQuery.of(context).size.height *
                                       containerHeightFraction *
-                                      1.5,
+                                      1,
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        containerHeightFraction *
+                                        1.5,
+                                    width: MediaQuery.of(context).size.width *
+                                        containerWidthFraction,
+                                    decoration: BoxDecoration(
+                                      color: Color(0x69027ee5),
+                                      // border: Border.all(color: Colors.blue, width: 1),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(5)),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/manti.jpg'),
+                                          fit: BoxFit.fill),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {},
+                                      child: Text(''),
+                                    ),
+                                  ),
+                                ),
+                                Container(
                                   width: MediaQuery.of(context).size.width *
                                       containerWidthFraction,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x69027ee5),
-                                    // border: Border.all(color: Colors.blue, width: 1),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/images/manti.jpg'),
-                                        fit: BoxFit.fill),
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: Text(''),
+                                  decoration:
+                                      BoxDecoration(color: Colors.black26),
+                                  child: Text(
+                                    "Manti",
+                                    style: TextStyle(fontSize: 20),
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width *
-                                    containerWidthFraction,
-                                decoration: BoxDecoration(color: Colors.black26),
-                                child: Text(
-                                  "Manti",
-                                  style: TextStyle(),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(padding: EdgeInsets.only(right: 5.0)),
-                          Column(
-                            children: [
-                              Container(
-                                height: MediaQuery.of(context).size.height *
-                                    containerHeightFraction *
-                                    1,
-                                child: Container(
-                                  padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                              ],
+                            ),
+                            Padding(padding: EdgeInsets.only(right: 5.0)),
+                            Column(
+                              children: [
+                                Container(
                                   height: MediaQuery.of(context).size.height *
                                       containerHeightFraction *
-                                      1.5,
+                                      1,
+                                  child: Container(
+                                    padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        containerHeightFraction *
+                                        1.5,
+                                    width: MediaQuery.of(context).size.width *
+                                        containerWidthFraction,
+                                    decoration: BoxDecoration(
+                                      color: Color(0x69027ee5),
+                                      // border: Border.all(color: Colors.blue, width: 1),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(5)),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/somsa.jpg'),
+                                          fit: BoxFit.fill),
+                                    ),
+                                    child: TextButton(
+                                      onPressed: () {},
+                                      child: Text(''),
+                                    ),
+                                  ),
+                                ),
+                                Container(
                                   width: MediaQuery.of(context).size.width *
                                       containerWidthFraction,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x69027ee5),
-                                    // border: Border.all(color: Colors.blue, width: 1),
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                    image: DecorationImage(
-                                        image: AssetImage('assets/images/somsa.jpg'),
-                                        fit: BoxFit.fill),
-                                  ),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: Text(''),
+                                  decoration:
+                                      BoxDecoration(color: Colors.black26),
+                                  child: Text(
+                                    "Somsa",
+                                    style: TextStyle(fontSize: 20),
+                                    textAlign: TextAlign.center,
                                   ),
                                 ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width *
-                                    containerWidthFraction,
-                                decoration: BoxDecoration(color: Colors.black26),
-                                child: Text(
-                                  "Somsa",
-                                  style: TextStyle(),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            )
-          ],
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -745,6 +818,7 @@ class Youtube extends StatefulWidget {
 }
 
 class _YoutubeState extends State<Youtube> {
+  bool isPressed = false;
   late YoutubePlayerController _controller;
 
   @override
@@ -774,9 +848,51 @@ class _YoutubeState extends State<Youtube> {
           ),
         ),
         body: Center(
-          child: YoutubePlayer(
-            controller: _controller,
-            showVideoProgressIndicator: true,
+          child: Column(
+            children: [
+              Padding(padding: EdgeInsets.only(top: 5.0)),
+              Container(
+                child: Text(
+                  widget.Name,
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.blue),
+                ),
+              ),
+              Padding(padding: EdgeInsets.only(top: 5.0)),
+              Container(
+                child: Text(
+                  "tayyorlash tartibi",
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.teal),
+                ),
+              ),
+              Padding(padding: EdgeInsets.only(top: 5.0)),
+              YoutubePlayer(
+                controller: _controller,
+                showVideoProgressIndicator: true,
+              ),
+              Container(
+                child: IconButton(
+                  icon: Icon(
+                    isPressed
+                        ? Icons.heart_broken_rounded
+                        : Icons.heart_broken_rounded,
+                    color: isPressed ? Colors.redAccent : null,
+                  ),
+                  onPressed: () {
+                    setState(
+                      () {
+                        isPressed = !isPressed;
+                      },
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -821,10 +937,12 @@ class CustomDelegate extends SearchDelegate<String> {
   List<String> data = nouns.take(100).toList();
 
   @override
-  List<Widget> buildActions(BuildContext context) => [IconButton(icon: Icon(Icons.clear), onPressed: () => query = '')];
+  List<Widget> buildActions(BuildContext context) =>
+      [IconButton(icon: Icon(Icons.clear), onPressed: () => query = '')];
 
   @override
-  Widget buildLeading(BuildContext context) => IconButton(icon: Icon(Icons.chevron_left), onPressed: () => close(context, ''));
+  Widget buildLeading(BuildContext context) => IconButton(
+      icon: Icon(Icons.chevron_left), onPressed: () => close(context, ''));
 
   @override
   Widget buildResults(BuildContext context) => Container();
@@ -833,7 +951,8 @@ class CustomDelegate extends SearchDelegate<String> {
   Widget buildSuggestions(BuildContext context) {
     var listToShow;
     if (query.isNotEmpty)
-      listToShow = data.where((e) => e.contains(query) && e.startsWith(query)).toList();
+      listToShow =
+          data.where((e) => e.contains(query) && e.startsWith(query)).toList();
     else
       listToShow = data;
 
@@ -846,6 +965,204 @@ class CustomDelegate extends SearchDelegate<String> {
           onTap: () => close(context, noun),
         );
       },
+    );
+  }
+}
+
+class Delicous extends StatefulWidget {
+  @override
+  _Delicous createState() => _Delicous();
+}
+
+class _Delicous extends State<Delicous> {
+  final double containerWidthFraction = 0.45;
+  final double containerHeightFraction = 0.15;
+  String? _result;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Shirinlikar"),
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+                'assets/images/back.jpg'), // Replace with your image asset path
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: Column(
+          children: [
+            Padding(padding: EdgeInsets.only(top: 10.0)),
+            Container(
+              height: MediaQuery.of(context).size.height *
+                  containerHeightFraction *
+                  0.3,
+              width: MediaQuery.of(context).size.width * 0.91,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey.shade900,
+                      spreadRadius: 5,
+                      blurRadius: 15),
+                ],
+              ),
+              child: Text(
+                "Shirinlikar",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 25, color: Colors.blue),
+              ),
+            ),
+            Padding(padding: EdgeInsets.only(top: 10.0)),
+            Container(
+              height: MediaQuery.of(context).size.height *
+                  containerHeightFraction *
+                  1.5,
+              child: ListView(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            height: MediaQuery.of(context).size.height *
+                                containerHeightFraction *
+                                1,
+                            child: Container(
+                              padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                              height: MediaQuery.of(context).size.height *
+                                  containerHeightFraction *
+                                  1.4,
+                              width: MediaQuery.of(context).size.width *
+                                  containerWidthFraction,
+                              decoration: BoxDecoration(
+                                color: Color(0x69027ee5),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.shade900,
+                                      spreadRadius: 5,
+                                      blurRadius: 15),
+                                ],
+                                // border: Border.all(color: Colors.blue, width: 1),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5)),
+                                image: DecorationImage(
+                                    image: AssetImage('assets/images/plov.jpg'),
+                                    fit: BoxFit.fill),
+                              ),
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Youtube(
+                                        videoId:
+                                            'PLy7yyLkSZkKKJ_XCTb6BQk-Dbe_6xqehB',
+                                        Name: "Vupi pay pirojniy",
+                                      ),
+                                    ),
+                                  );
+                                },
+                                child: Text(''),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width *
+                                containerWidthFraction,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey.shade900,
+                                    spreadRadius: 5,
+                                    blurRadius: 15),
+                              ],
+                            ),
+                            child: Text(
+                              "Vupi pay pirojniy",
+                              style: TextStyle(fontSize: 20),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(padding: EdgeInsets.only(right: 5.0)),
+                      Column(
+                        children: [
+                          Container(
+                            height: MediaQuery.of(context).size.height *
+                                containerHeightFraction *
+                                1,
+                            child: Container(
+                              padding: EdgeInsets.fromLTRB(3, 5, 10, 0),
+                              height: MediaQuery.of(context).size.height *
+                                  containerHeightFraction *
+                                  1.4,
+                              width: MediaQuery.of(context).size.width *
+                                  containerWidthFraction,
+                              decoration: BoxDecoration(
+                                color: Color(0x69027ee5),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.shade900,
+                                      spreadRadius: 5,
+                                      blurRadius: 15),
+                                ],
+                                // border: Border.all(color: Colors.blue, width: 1),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5)),
+                                image: DecorationImage(
+                                    image: AssetImage('assets/images/pie.jpg'),
+                                    fit: BoxFit.fill),
+                              ),
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Youtube(
+                                              videoId: 'S9PBhfjRogw',
+                                              Name: 'Tort',
+                                            )),
+                                  );
+                                },
+                                child: Text(''),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width *
+                                containerWidthFraction,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey.shade900,
+                                    spreadRadius: 5,
+                                    blurRadius: 15),
+                              ],
+                            ),
+                            child: Text(
+                              "Tort",
+                              style: TextStyle(fontSize: 20),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
